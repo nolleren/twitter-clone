@@ -148,6 +148,22 @@ const User = objectType({
     t.string('name')
     t.nonNull.string('email')
     t.nonNull.string('password')
+    t.field('profile', {
+      type: 'Profile',
+      resolve: async (parent, _, context: Context) => {
+        return await context.prisma.profile.findUnique({
+          where: { userId: parent.id || undefined },
+        })
+      },
+    })
+    t.list.field('tweets', {
+      type: 'Tweet',
+      resolve: async (parent, _, context: Context) => {
+        return await context.prisma.tweet.findMany({
+          where: { authorId: parent.id || undefined}
+        })
+      },
+    })
   },
 })
 

@@ -49,6 +49,8 @@ type User {
   id: Int!
   name: String
   password: String!
+  profile: Profile
+  tweets: [Tweet]
 }
 
 input UserCreateInput {
