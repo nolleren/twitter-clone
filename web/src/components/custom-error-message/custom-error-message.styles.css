@@ -1,0 +1,9 @@
+.error-header {
+    display: flex;
+    justify-content: center;
+}
+
+.error-text {
+    color: red;
+    font-weight: 600;
+}
