@@ -53,6 +53,28 @@ export interface updateProfileVariables {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL mutation operation: createTweet
+// ====================================================
+
+export interface createTweet_createTweet {
+  id: number;
+  content: string | null;
+}
+
+export interface createTweet {
+  createTweet: createTweet_createTweet | null;
+}
+
+export interface createTweetVariables {
+  content?: string | null;
+}
+
+/* tslint:disable */
+/* eslint-disable */
+// @generated
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL query operation: me
 // ====================================================
 
@@ -66,6 +88,7 @@ export interface me_me_profile {
 
 export interface me_me {
   id: number;
+  name: string | null;
   profile: me_me_profile | null;
 }
 

@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet-async';
 import CustomErrorMessage from '../../components/custom-error-message/custom-error-message.component';
 
 import TwitterLogo from '../../assets/twitter-logo.png';
-import './signup.scoped.css';
+import '../../styles/signup-login.styles.css';
 
 const SIGNUP_MUTATION = gql`
   mutation signup($name: String, $email: String!, $password: String!) {

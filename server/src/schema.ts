@@ -113,6 +113,24 @@ const Mutation = objectType({
       },
     })
 
+    t.field('createTweet', {
+      type: 'Tweet',
+      args: {
+        content: stringArg(),
+      },
+      resolve: async (parent, args, context: Context) => {
+        const userId = getUserId(context)
+        if (!userId) throw new Error('Could not authenticate user.')
+
+        return await context.prisma.tweet.create({
+          data: {
+              ...args,
+              author: { connect: { id: Number(userId) }}
+          }
+        })
+      },
+    })
+
     t.field('login', {
       type: 'AuthPayload',
       args: {
@@ -160,7 +178,7 @@ const User = objectType({
       type: 'Tweet',
       resolve: async (parent, _, context: Context) => {
         return await context.prisma.tweet.findMany({
-          where: { authorId: parent.id || undefined}
+          where: { authorId: parent.id || undefined },
         })
       },
     })

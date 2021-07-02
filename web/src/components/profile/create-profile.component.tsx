@@ -6,11 +6,11 @@ import { Helmet } from 'react-helmet-async';
 import Modal from 'react-modal';
 
 import { createProfile, createProfileVariables } from '../../graphql';
-import { customModalStyles } from '../../styles/modal.scoped'
-import '../../styles/signup.scoped.css';
+import { customModalStyles } from '../../styles/modal.styles';
 
-
-const CREATE_PROFILE_MUTATION = loader('src/graphql/mutations/profile/create-profile.gql');
+const CREATE_PROFILE_MUTATION = loader(
+  'src/graphql/mutations/profile/create-profile.gql'
+);
 const ME_QUERY = loader('src/graphql/queries/profile/me.gql');
 
 const CreateProfile = () => {
@@ -31,8 +31,8 @@ const CreateProfile = () => {
   };
 
   const openModal = () => {
-      setModalIsOpen(true)
-  }
+    setModalIsOpen(true);
+  };
 
   const closeModal = () => {
     setModalIsOpen(false);
@@ -43,7 +43,7 @@ const CreateProfile = () => {
       <Helmet>
         <title>Fake Twitter Create Profile</title>
       </Helmet>
-      <button onClick={openModal}>Create Profile</button>
+      <button onClick={openModal} className='edit-button'>Create Profile</button>
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
@@ -67,7 +67,7 @@ const CreateProfile = () => {
             <Field name='location' type='text' placeholder='Location' />
             <Field name='website' type='text' placeholder='Website' />
 
-            <button type='submit' className='login-button'>
+            <button type='submit' className='custom-button'>
               <span>Create Profile</span>
             </button>
           </Form>

@@ -1,7 +1,15 @@
 :root {
   --main-color: #55abee;
-  --button-hover-color: #228dcf
+  --button-hover-color: #228dcf;
+  --accent: #E1E8ED;
 }
+
+/* @import "./styles/landing.styles.css";
+@import "./styles/primary.styles.css";
+@import "./styles/profile.styles.css";
+@import "./styles/signup-login.styles.css";
+@import "./styles/leftnav.styles.css"; */
+
 
 textarea {
   color: rgb(38, 50, 56);

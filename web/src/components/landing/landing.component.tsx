@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import TwitterLogo from '../../assets/twitter-logo.png';
 import { Helmet } from 'react-helmet-async';
 
-import './landing.styles.css';
+import '../../styles/landing.styles.css';
 
 const Landing = () => (
   <div className='main'>

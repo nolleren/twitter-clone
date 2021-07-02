@@ -1,4 +1,4 @@
-import './custom-error-message.styles.css';
+import './custom-error-message.scoped.css';
 
 interface Props {
   children?: React.ReactNode;

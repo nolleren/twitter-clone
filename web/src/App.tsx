@@ -13,7 +13,7 @@ import Users from './components/users/users';
 import Signup from './pages/signup/signup.component';
 import LogIn from './pages/login/login.component';
 import IsAuthenticated from './components/isAuthenticated/isAuthenticated';
-import Profile from './pages/profile/create-profile.component';
+import Profile from './pages/profile/profile.component';
 
 const httpLink = new HttpLink({ uri: 'http://localhost:4000' });
 const authLink = setContext(async (req, { headers }) => {

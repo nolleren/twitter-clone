@@ -5,8 +5,8 @@ import { Link, useHistory } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
 import TwitterLogo from '../../assets/twitter-logo.png';
-import './login.scoped.css';
 import CustomErrorMessage from '../../components/custom-error-message/custom-error-message.component';
+import '../../styles/signup-login.styles.css';
 
 const LOGIN_MUTATION = gql`
   mutation login($email: String!, $password: String!) {
@@ -70,7 +70,7 @@ const LogIn = () => {
           <Field name='password' type='password' placeholder='Password' />
           <ErrorMessage name='password' component={CustomErrorMessage} />
 
-          <button type='submit' className='login-button'>
+          <button type='submit' className='custom-button'>
             <span>Log In</span>
           </button>
         </Form>
